@@ -6,8 +6,11 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "ng": "ng",
+    "start": "ng serve",
     "build": "ng build",
-    "heroku-postbuild": "cd ANGULAR_APP_FOLDER && npm install"
-  }
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+ }
 }
