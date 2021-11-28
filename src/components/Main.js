@@ -3,8 +3,7 @@ import AddMovie from './AddMovie'
 import data from "./data.json"
 import Search from "./Search";
 import Sort from "./Sort"
-import MoviePanel from "./MoviePanel";
-import DeleteMovie from "./DeleteMovie";
+import Movie from "./Movie";
 
 class Main extends React.Component{
     constructor(props){
@@ -21,9 +20,9 @@ class Main extends React.Component{
         }
     }
     addMovie(newMovie){
-        this.setState(prevState => ({
-            movies: [...prevState.movies, newMovie]
-        }))
+
+        this.setState({movies: [...this.state.movies, newMovie]})
+        // console.log(this.state.movies)
     }
     addIds(){
         this.setState({ids: this.ids+1})
@@ -32,15 +31,11 @@ class Main extends React.Component{
         this.setState({ids: this.ids-1})
     }
     setOrder(newOrder){
-        this.subtractIds();
-        // console.log(newOrder)
         this.setState({movies: newOrder})
-        // console.log(this.state.movies)
     }
     deleteMovie(id){
-        // console.log(id)
         this.setState({
-            movies: this.state.movies.filter(movie => movie.id != id)
+            movies: this.state.movies.filter(movie => movie.id !== id)
         })
     }
     setSearchName(name){
@@ -49,10 +44,9 @@ class Main extends React.Component{
 
     render(){
         const movies = this.state.movies
-        // console.log(movies)
+
         return(
             <div>
-                {/* <AddMovie ids={this.state.ids} addMovie={this.addMovie} addIds={this.addIds}/> */}
                 <div className='toolbox'>
                     <Sort movies={this.state.movies} setOrder={this.setOrder}/>
                     <Search setSearchName={this.setSearchName}/>
@@ -66,22 +60,17 @@ class Main extends React.Component{
                 ].map((movie)=> (
                    
                     <div key={movie.id}>
-                        <MoviePanel 
+                        <Movie 
                             id= {movie.id}
                             name= {movie.name}
                             description= {movie.description}
                             rating= {movie.rating}
                             image= {movie.image}
+
                             setOrder={this.setOrder}
                             movies={this.state.movies}
                             delete={this.deleteMovie}
                         />
-                        {/* <DeleteMovie 
-                            id={movie.id}
-                            movies={this.state.movies}
-                            setOrder={this.setOrder}
-                            delete={this.deleteMovie}
-                        />  */}
                     </div>
                 ))
                 }

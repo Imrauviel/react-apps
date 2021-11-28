@@ -5,7 +5,7 @@ class Sort extends React.Component{
         super(props)
         this.setOrder = props.setOrder
         this.state = {
-            movies: props.movies
+            // movies: props.movies
         }
     }
     sortMovies(){
@@ -18,7 +18,7 @@ class Sort extends React.Component{
             }
                 return 0;
         }
-        const newOrder = [...this.state.movies.sort(compare)];
+        const newOrder = [...this.props.movies.sort(compare)];
         this.setOrder(newOrder);
     }
     render(){

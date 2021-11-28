@@ -9,11 +9,42 @@ class Movie extends React.Component{
             id: props.id,
             name: props.name,
             description: props.description,
-            rating: props.rating,
             image: props.image,
-            movies: props.movies,
-            
         }
+    }
+    addRating(){
+        const newR = this.props.rating+1
+        const newOrder = this.props.movies.map((movie) =>{
+            if (movie.id !== this.state.id){
+                return movie
+            }
+            return {
+                id: this.state.id,
+                name: this.state.name,
+                description: this.state.description,
+                image: this.state.image,
+                rating: newR
+            }
+        })
+        // console.log(newOrder)
+        this.props.setOrder(newOrder)
+    }
+    substrackRating(){
+        const newR = this.props.rating-1
+        const newOrder = this.props.movies.map((movie) =>{
+            if (movie.id !== this.state.id){
+                return movie
+            }
+            return {
+                id: this.state.id,
+                name: this.state.name,
+                description: this.state.description,
+                image: this.state.image,
+                rating: newR
+            }
+        })
+        // console.log(newOrder)
+        this.props.setOrder(newOrder)
     }
 
     render(){
@@ -27,7 +58,12 @@ class Movie extends React.Component{
 
                     <h2 className='title'>{this.state.name}</h2>
                     <p className='text'>{this.state.description}</p>
-                    <h4 >Rating: {this.state.rating}/10</h4>
+                    <div className='rating-box'>
+                        <button onClick={this.addRating.bind(this)} className='rating'>+</button>
+                        <h4 >  Rating: {this.props.rating}/10  </h4>
+                        <button onClick={this.substrackRating.bind(this)} className='rating'>-</button> 
+                    </div>
+                   
                 </div>
                 <DeleteMovie 
                             id={this.state.id}

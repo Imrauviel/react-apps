@@ -4,7 +4,7 @@
         "name": "Batman Begins",
         "description": "    After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption.",
         "image": "https://csn.naekranie.pl/wp-content/uploads/2019/01/Batman-Begins.jpg",
-        "rating": "2",
+        "rating": 2,
         "onclick": "https://www.filmweb.pl/film/Batman+-+Pocz%C4%85tek-2005-106376"
     },
     {
@@ -12,13 +12,13 @@
         "name": "Inception",
         "description": "    A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
         "image": "https://www.thesun.co.uk/wp-content/uploads/2018/02/nintchdbpict000033016847-e1517964746214.jpg",
-        "rating": "4"
+        "rating": 4
     },
     {
         "id": 2,
         "name": "Dunkirk",
         "description": "    Allied soldiers from Belgium, the British Commonwealth and Empire, and France are surrounded by the German Army and evacuated during a fierce battle in World War II.",
         "image": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/14/17/dunkirk-movie-2017.jpg?width=982&height=726&auto=webp&quality=75",
-        "rating": "1"
+        "rating": 1
     }
 ]

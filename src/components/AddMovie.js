@@ -3,7 +3,7 @@ import React from "react";
 class AddMovie extends React.Component{
     constructor(props){
         super(props)
-        this.addMovie = props.addMovie
+        // this.addMovie = props.addMovie
         this.addIds = props.addIds
 
         this.state = {
@@ -36,7 +36,7 @@ class AddMovie extends React.Component{
         }
         
         this.addIds()
-        this.addMovie(newMovie)
+        this.props.addMovie(newMovie)
 
         // console.log(this.state.ids)
         
@@ -51,16 +51,29 @@ class AddMovie extends React.Component{
     
     render(){
             return (
-                <div>
-                    <form> 
-                        <label>Name</label>
-                        <input type='text' onChange={(e)=>this.nameChange(e)} value={this.state.name}/>
-                        <label>Description</label>
-                        <input type='text' onChange={(e)=>this.descriptionChange(e)} value={this.state.description}/>
-                        <label>Rating</label>
-                        <input type='text' onChange={(e)=>this.ratingChange(e)} value={this.state.rating}/>
-                        <label>Image</label>
-                        <input type='text' onChange={(e)=>this.imageChange(e)} value={this.state.image}/>
+                <div className='form-style-3'>
+                    Add new Movie:
+                    <form > 
+                        <label>
+                            <span> Title </span>
+                            <input type='text' onChange={(e)=>this.nameChange(e)} value={this.state.name}/>
+                        </label>
+                        
+                        <label>
+                            <span> Description</span>
+                            <input type='text' onChange={(e)=>this.descriptionChange(e)} value={this.state.description}/>
+                        </label>
+                        
+                        <label>
+                            <span> Rating</span>
+                            <input type='text' onChange={(e)=>this.ratingChange(e)} value={this.state.rating}/>
+                        </label>
+                        
+                        <label>
+                            <span> Image</span>
+                            <input type='text' onChange={(e)=>this.imageChange(e)} value={this.state.image}/>
+                        </label>
+                        
                     </form>
                     <button onClick={this.addButton.bind(this)}>Add</button>
                 </div>
