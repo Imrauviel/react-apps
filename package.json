@@ -8,6 +8,5 @@
   "scripts": {
     "start": "node server/server.js",
     "build": "ng build",
-    "heroku-postbuild": "ng build --prod"
   }
 }
