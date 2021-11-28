@@ -4,5 +4,10 @@
   "version": "1.0.0",
   "engines": {
     "yarn": "1.x"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "ng build",
+    "heroku-postbuild": "ng build --prod" // this will be run on Heroku
   }
 }
